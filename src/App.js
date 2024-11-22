@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Form
+}
+from "react-router-dom"
+import TeamStatus from './component/TeamStatusAdmin';
+import Login from './component/Login';
+import StudentPortal from "./component/Studentportal";
+import StudentPortalStatus from './component/StudentprojectStatus';
+import AdminPortal from './component/AdminPortal';
+import ProjectAbstractForm from './component/Form1';
+import RoleSpecificationForm from "./component/Form2";
+import WeeklyStatusMatrix from "./component/Form3";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+    <Routes>
+    <Route path = '/' element = {<RoleSpecificationForm/>}/>
+    <Route path = '/studentstatus' element = {<StudentPortalStatus/>}/>
+    <Route path = '/teamstatus' element = {<TeamStatus/>}/>
+    </Routes>
+    </Router>
+    </>
   );
 }
 
