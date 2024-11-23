@@ -19,13 +19,14 @@ import MentorStatusAdmin from "./component/MentorStatusAdmin";
 import MentorChoiceForm from "./component/MentorChoice";
 import TeamJoin from "./component/TeamJoiningForm";
 import AdminUploadSection from "./component/AdminUpload";
+import StudentFormSubmission from "./component/StudentFormSubmission";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<StudentFormSubmission/>} />
           <Route path="/studentstatus" element={<StudentprojectStatus />} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>
