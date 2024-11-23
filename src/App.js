@@ -19,13 +19,14 @@ import MentorPortal from "./component/MentorPortal";
 import MentorDashboard from "./component/MentorDashboard";
 import MentorStatusAdmin from "./component/MentorStatusAdmin";
 import MentorChoiceForm from "./component/MentorChoice";
+import TeamJoin from "./component/TeamJoiningForm";
 
 function App() {
   return (
     <>
     <Router>
     <Routes>
-    <Route path = '/' element = {<MentorChoiceForm/>}/>
+    <Route path = '/' element = {<TeamJoin/>}/>
     <Route path = '/studentstatus' element = {<StudentPortalStatus/>}/>
     <Route path = '/teamstatus' element = {<TeamStatus/>}/>
     </Routes>
