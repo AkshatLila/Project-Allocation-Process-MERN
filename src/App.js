@@ -21,7 +21,7 @@ function App() {
     <>
     <Router>
     <Routes>
-    <Route path = '/' element = {<RoleSpecificationForm/>}/>
+    <Route path = '/' element = {<Login/>}/>
     <Route path = '/studentstatus' element = {<StudentPortalStatus/>}/>
     <Route path = '/teamstatus' element = {<TeamStatus/>}/>
     </Routes>
