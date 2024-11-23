@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f1f2f7;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  img {
+    width: 55px;
+    height: auto;
+    margin-top: 120px;
+    margin-left: 50px;
+  }
+  
+  .tag h2 {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    margin-top: 40px;
+  }
+  
+  .button {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .btn {
+    width: 155px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #00acac;
+    border-radius: 5px;
+    border: none;
+    margin-top: 50px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  button a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .logo {
+      width: 50px; /* Adjust logo size for smaller screens */
+      margin-top: 80px; /* Adjust top margin for smaller screens */
+    }
+  
+    .tag h2 {
+      font-size: 24px; /* Reduce font size for h2 */
+      margin-top: 20px; /* Reduce top margin */
+    }
+  
+    .button {
+      gap: 10px; /* Reduce gap between buttons */
+    }
+  
+    .btn {
+      width: 120px; /* Adjust button width for smaller screens */
+      height: 35px; /* Adjust button height for smaller screens */
+      font-size: 16px; /* Reduce font size for buttons */
+      margin-top: 30px; /* Reduce margin-top */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      width: 50px; /* Further reduce logo size for very small screens */
+    }
+  
+    .tag h2 {
+      margin-top: 25px;
+      font-size: 30px; /* Further reduce font size for h2 */
+    }
+  
+    .button {
+      gap: 10px; /* Reduce gap between buttons */
+    }
+  
+    .btn {
+      width: 100%; /* Make buttons full-width */
+      height: 45px; /* Slightly increase height for better touch targets */
+      font-size: 18px; /* Keep font size consistent */
+    }
+  }
+  
