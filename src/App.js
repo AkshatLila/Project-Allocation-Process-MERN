@@ -17,13 +17,14 @@ import RoleSpecificationForm from "./component/Form2";
 import WeeklyStatusMatrix from "./component/Form3";
 import MentorPortal from "./component/MentorPortal";
 import MentorDashboard from "./component/MentorDashboard";
+import MentorStatusAdmin from "./component/MentorStatusAdmin";
 
 function App() {
   return (
     <>
     <Router>
     <Routes>
-    <Route path = '/' element = {<MentorDashboard/>}/>
+    <Route path = '/' element = {<MentorStatusAdmin/>}/>
     <Route path = '/studentstatus' element = {<StudentPortalStatus/>}/>
     <Route path = '/teamstatus' element = {<TeamStatus/>}/>
     </Routes>
