@@ -43,7 +43,7 @@ const MentorChoiceForm = () => {
 
       {/* Form Container */}
       <div className="form-container">
-        <h1>Project Submission Form</h1>
+        <h1>Project Title Form/Mentor Choice</h1>
 
         {/* Project 1 Details */}
         <div className="form-group">
