@@ -8,7 +8,7 @@ import {
 import TeamStatus from "./component/TeamStatusAdmin";
 import Login from "./component/Login";
 import StudentPortal from "./component/Studentportal";
-import StudentPortalStatus from "./component/StudentprojectStatus";
+import StudentprojectStatus from "./component/StudentprojectStatus";
 import AdminPortal from "./component/AdminPortal";
 import ProjectAbstractForm from "./component/Form1";
 import RoleSpecificationForm from "./component/Form2";
@@ -26,7 +26,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/studentstatus" element={<StudentPortalStatus />} />
+          <Route path="/studentstatus" element={<StudentprojectStatus />} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>
       </Router>
