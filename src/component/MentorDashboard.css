@@ -1,0 +1,105 @@
+/* Base Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f2f7;
+    color: #1a1a1a;
+  }
+  
+  /* Logo Styling */
+  .status {
+    text-align: center;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 55px;
+  }
+  
+  /* Page Container */
+  .form-container {
+    width: 60%;
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #1a1a1a; /* Dark text color */
+    margin-bottom: 20px;
+  }
+  
+  /* Team Row Styling */
+  .team-row {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+  
+  .team-row:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .team-info {
+    color: #1a1a1a; /* Dark text */
+    font-weight: bold;
+  }
+  
+  /* Hidden Team Details with Smooth Animation */
+  .team-details {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    margin-top: 10px;
+  }
+  
+  .team-details p {
+    margin: 8px 0;
+    color: #333;
+  }
+  
+  .update-btn {
+    display: inline-block;
+    padding: 8px 8px;
+    background-color: #6ec3c7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .update-btn:hover {
+    background-color: #5aa9ad;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-container {
+      width: 95%;
+    }
+  }
+  

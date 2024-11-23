@@ -16,13 +16,14 @@ import ProjectAbstractForm from './component/Form1';
 import RoleSpecificationForm from "./component/Form2";
 import WeeklyStatusMatrix from "./component/Form3";
 import MentorPortal from "./component/MentorPortal";
+import MentorDashboard from "./component/MentorDashboard";
 
 function App() {
   return (
     <>
     <Router>
     <Routes>
-    <Route path = '/' element = {<MentorPortal/>}/>
+    <Route path = '/' element = {<MentorDashboard/>}/>
     <Route path = '/studentstatus' element = {<StudentPortalStatus/>}/>
     <Route path = '/teamstatus' element = {<TeamStatus/>}/>
     </Routes>
