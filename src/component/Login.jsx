@@ -43,7 +43,7 @@ export default function Login() {
           justify-content: center;
         }
         .logo img {
-          height: 60px;
+          height: 55px;
         }
         .signin-box {
           background-color: #ffffff;

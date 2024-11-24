@@ -12,7 +12,7 @@
     align-items: center;
   }
   
-  img {
+  .mentor>img {
     width: 55px;
     height: auto;
     margin-top: 120px;
