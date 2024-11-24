@@ -21,13 +21,14 @@ import TeamJoin from "./component/TeamJoiningForm";
 import AdminUploadSection from "./component/AdminUpload";
 import StudentFormSubmission from "./component/StudentFormSubmission";
 import AdminTeamOverview from "./component/AdminTeamOverview";
+import MentorTeamSelection from "./component/MentorTeamSelection";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<AdminTeamOverview/>} />
+          <Route path="/" element={<MentorTeamSelection/>} />
           <Route path="/studentstatus" element={<StudentprojectStatus />} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>
