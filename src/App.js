@@ -39,6 +39,8 @@ function App() {
 
           {/* MENTOR PORTAL */}
           <Route path="/" element={<MentorPortal/>} />
+          <Route path="/mentorteamselection" element={<MentorTeamSelection/>} />
+          <Route path="/mentordashboard" element={<MentorDashboard/>} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>
       </Router>

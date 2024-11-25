@@ -14,10 +14,10 @@ const MentorPortal = () => {
   </div>
   <div className="button">
     <button className="btn">
-      <Link to="/HTML/mentor_team_selection.html">Team Selection</Link>
+      <Link to="/mentorteamselection">Team Selection</Link>
     </button>
     <button className="btn">
-      <Link to="/HTML/mentor_dashboard.html">Dashboard</Link>
+      <Link to="/mentordashboard">Dashboard</Link>
     </button>
     <button className="btn">
       <Link to="/HTML/approve_docs.html">Approve Docs</Link>
