@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./AdminTeamOverview.css";
-import logo from "./logo.jpg";
+import logo from './logo.jpg'
 
-export default function AdminTeamOverview() {
-  // Initial team data (static example)
-  const [teams, setTeams] = useState([
+const AdminTeamOverview = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [expandedTeams, setExpandedTeams] = useState({});
+
+  const teams = [
     {
-      id: 1,
-      name: "AI Chatbot",
+      projectName: "AI Chatbot",
       technology: "Python, TensorFlow",
       mentor: "Dr. John Smith",
       members: [
@@ -30,11 +31,9 @@ export default function AdminTeamOverview() {
           group: "A1",
         },
       ],
-      isOpen: false, // Tracks if the details are open
     },
     {
-      id: 2,
-      name: "E-Commerce Website",
+      projectName: "E-Commerce Website",
       technology: "React, Node.js",
       mentor: "Prof. Jane Doe",
       members: [
@@ -57,17 +56,23 @@ export default function AdminTeamOverview() {
           group: "B2",
         },
       ],
-      isOpen: false, // Tracks if the details are open
     },
-  ]);
+  ];
 
-  // Toggle details for a specific team
-  const toggleDetails = (teamId) => {
-    setTeams((prevTeams) =>
-      prevTeams.map((team) =>
-        team.id === teamId ? { ...team, isOpen: !team.isOpen } : team
-      )
-    );
+  const toggleDetails = (index) => {
+    setExpandedTeams((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value.toLowerCase().trim());
+  };
+
+  const viewProgress = (event, teamName) => {
+    event.stopPropagation(); // Prevent triggering toggleDetails.
+    window.location.href = "form3.html";
   };
 
   return (
@@ -75,6 +80,17 @@ export default function AdminTeamOverview() {
       {/* Logo Section */}
       <div className="status">
         <img src={logo} alt="SKIT Logo" className="logo" />
+      </div>
+
+      {/* Search Bar */}
+      <div className="search-bar-container">
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="Search teams or technologies..."
+          value={searchQuery}
+          onChange={handleSearch}
+        />
       </div>
 
       {/* Team Overview Section */}
@@ -86,46 +102,57 @@ export default function AdminTeamOverview() {
 
         {/* Teams List */}
         <div id="teams-list">
-          {teams.map((team) => (
-            <div
-              className="team-row"
-              key={team.id}
-              onClick={() => toggleDetails(team.id)}
-            >
-              <div className="team-info">
-                <h4>{team.name}</h4>
-                <p>
-                  <strong>Technology:</strong> {team.technology}
-                </p>
-                <p>
-                  <strong>Mentor:</strong> {team.mentor}
-                </p>
-              </div>
+          {teams
+            .filter(
+              (team) =>
+                team.projectName.toLowerCase().includes(searchQuery) ||
+                team.technology.toLowerCase().includes(searchQuery)
+            )
+            .map((team, index) => (
               <div
-                className="team-details"
-                style={{
-                  maxHeight: team.isOpen ? `${team.members.length * 70}px` : "0", // Adjust row height to fit
-                  opacity: team.isOpen ? "1" : "0",
-                  overflow: "hidden",
-                  transition: "max-height 0.3s ease, opacity 0.3s ease",
-                }}
+                className="team-row"
+                key={index}
+                onClick={() => toggleDetails(index)}
               >
-
-                <h4>Team Members</h4>
-                <ul>
-                  {team.members.map((member, index) => (
-                    <li key={index}>
-                      <strong>{member.name}</strong> - RTU Roll No:{" "}
-                      {member.rollNo} - Role: {member.role} - Group:{" "}
-                      {member.group}
-                    </li>
-                  ))}
-                </ul>
+                <div className="team-info">
+                  <h4>{team.projectName}</h4>
+                  <p>
+                    <strong>Technology:</strong> {team.technology}
+                  </p>
+                  <p>
+                    <strong>Mentor:</strong> {team.mentor}
+                  </p>
+                </div>
+                <div
+                  className="team-details"
+                  style={{
+                    maxHeight: expandedTeams[index] ? "500px" : "0",
+                    opacity: expandedTeams[index] ? "1" : "0",
+                  }}
+                >
+                  <h4>Team Members</h4>
+                  <ul>
+                    {team.members.map((member, idx) => (
+                      <li key={idx}>
+                        <strong>{member.name}</strong> - RTU Roll No:{" "}
+                        {member.rollNo} - Role: {member.role} - Group:{" "}
+                        {member.group}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    className="progress-btn"
+                    onClick={(event) => viewProgress(event, team.projectName)}
+                  >
+                    View Progress
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default AdminTeamOverview;

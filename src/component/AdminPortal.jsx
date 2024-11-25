@@ -14,10 +14,10 @@ export default function AdminPortal() {
   </div>
   <div className="button">
     <button className="btn">
-      <Link to="../HTML/mentor_status_admin.html">Mentor Status</Link>
+      <Link to="/mentorstatusadmin">Mentor Status</Link>
     </button>
     <button className="btn">
-      <Link to="../HTML/admin_team_overview.html">Team Status</Link>
+      <Link to="/adminteamoverview">Team Status</Link>
     </button>
     <button className="btn">
       <Link to="../HTML/approve_docs.html">Approve Docs</Link>

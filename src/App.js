@@ -38,9 +38,14 @@ function App() {
           <Route path= "/mentorchoiceform" element={<MentorChoiceForm/>}/>
 
           {/* MENTOR PORTAL */}
-          <Route path="/" element={<MentorPortal/>} />
+          {/* <Route path="/" element={<MentorPortal/>} /> */}
           <Route path="/mentorteamselection" element={<MentorTeamSelection/>} />
           <Route path="/mentordashboard" element={<MentorDashboard/>} />
+
+          {/* ADMIN PORTAL */}
+          <Route path="/" element={<AdminPortal/>} />
+          <Route path="/mentorstatusadmin" element={<MentorStatusAdmin />} />
+          <Route path="/adminteamoverview" element={<AdminTeamOverview />} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>
       </Router>
