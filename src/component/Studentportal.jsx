@@ -23,7 +23,7 @@ function StudentPortal() {
     </button>
     {/* Only to be shown to leaders of the team */}
     <button className="btn">
-      <Link to="/HTML/student_form_submission.html">Form Submissions</Link>
+      <Link to="/studentformsubmission">Form Submissions</Link>
     </button>
     <button className="btn">
       <Link to="/HTML/project_details_filling.html">Fill Project Details</Link>

@@ -28,9 +28,10 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<StudentFormSubmission/>} />
+          <Route path="/" element={<StudentPortal/>} />
           <Route path= "/teamjoin" element={<TeamJoin/>}/>
           <Route path= "/studentprojectstatus" element={<StudentprojectStatus/>}/>
+          <Route path= "/studentformsubmission" element={<StudentFormSubmission/>}/>
           <Route path="/studentstatus" element={<StudentprojectStatus />} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>
