@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./TeamJoiningForm.css";
 import logo from './logo.jpg';
 
 const TeamJoin = () => {
@@ -24,6 +23,119 @@ const TeamJoin = () => {
 
   return (
     <div>
+      <style>
+        {`
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f2f7;
+          }
+
+          .status {
+            text-align: center;
+            margin: 20px 0;
+          }
+
+          .logo {
+            width: 55px;
+          }
+
+          .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px auto;
+          }
+
+          .team-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+          }
+
+          .team-options > div {
+            flex: 1 1 calc(48% - 20px);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+          }
+
+          .create-team > h3,
+          .join-team > h3 {
+            margin: 20px 0;
+          }
+
+          .create-team > input,
+          .join-team > input {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+          }
+
+          .create-team > button,
+          .join-team > button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+          }
+
+          .create-team > button {
+            background-color: #6ec3c7;
+            color: #ffffff;
+          }
+
+          .create-team > button:hover {
+            background-color: #5aa9ad;
+          }
+
+          .join-team > button {
+            background-color: #e74c3c;
+            color: #ffffff;
+          }
+
+          .join-team > button:hover {
+            background-color: #c0392b;
+          }
+
+          /* Responsive Design */
+          @media (max-width: 768px) {
+            .team-options {
+              flex-direction: column;
+              gap: 15px;
+            }
+
+            .team-options > div {
+              flex: 1 1 100%;
+            }
+
+            .logo {
+              width: 45px;
+            }
+
+            .container {
+              width: 95%;
+            }
+          }
+        `}
+      </style>
+
       {/* Logo Section */}
       <div className="status">
         <img src={logo} alt="SKIT Logo" className="logo" />

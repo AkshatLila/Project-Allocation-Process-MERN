@@ -76,7 +76,8 @@
     background-color: #6ec3c7;
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 40px;
+    padding: 7px 40px;
+    border-radius: 5px;
   }
   
   .upload-btn:hover {

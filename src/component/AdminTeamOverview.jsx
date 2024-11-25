@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import WeeklyStatusMatrix from "./Form3"; // Import the WeeklyStatusMatrix component
-import "./AdminTeamOverview.css";
 import logo from './logo.jpg';
 
 const AdminTeamOverview = () => {
@@ -86,12 +85,181 @@ const AdminTeamOverview = () => {
 
   return (
     <div>
-      {/* Logo Section */}
+      <style>
+        {`
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+
+          body {
+            font-family: "Roboto", sans-serif;
+            background-color: #f1f2f7;
+            color: #1a1a1a;
+            line-height: 1.6;
+          }
+
+          .status {
+            text-align: center;
+            margin: 20px 0;
+          }
+
+          .logo {
+            width: 55px;
+          }
+
+          .search-bar-container {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+
+          #search-bar {
+            width: 90%;
+            max-width: 500px;
+            padding: 10px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1em;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          }
+
+          #search-bar:focus {
+            outline: none;
+            border-color: #26cfc5;
+            box-shadow: 0 0 10px rgba(38, 207, 197, 0.5);
+          }
+
+          .form-container {
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px auto;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+          }
+
+          h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #333;
+          }
+
+          .description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+          }
+
+          .team-row {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            background-color: #fff;
+          }
+
+          .team-row:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          }
+
+          .team-info {
+            padding: 15px 20px;
+            background-color: #f1f1f1;
+            border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+          }
+
+          .team-info h4 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+          }
+
+          .team-info p {
+            font-size: 1em;
+            color: #555;
+          }
+
+          .team-details {
+            background-color: #ffffff;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            padding: 0 20px;
+          }
+
+          .team-details h4 {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #333;
+          }
+
+          .team-details ul {
+            list-style: none;
+            margin: 15px 0;
+            padding: 0;
+          }
+
+          .team-details ul li {
+            font-size: 1em;
+            margin: 8px 0;
+            padding: 8px 12px;
+            background-color: #f9fafc;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          }
+
+          .progress-btn {
+            display: flex;
+            width: 140px;
+            margin: 15px;
+            padding: 7px 5px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #26cfc5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+
+          .progress-btn:hover {
+            background-color: #1aa8a1;
+          }
+
+          .progress-btn:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(38, 207, 197, 0.5);
+          }
+
+          @media (max-width: 768px) {
+            .form-container {
+              padding: 20px;
+              margin: 20px auto;
+            }
+
+            .team-info h4 {
+              font-size: 1.2em;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .form-container {
+              width: 95%;
+              padding: 15px;
+            }
+          }
+        `}
+      </style>
+
       <div className="status">
         <img src={logo} alt="SKIT Logo" className="logo" />
       </div>
 
-      {/* Search Bar */}
       <div className="search-bar-container">
         <input
           type="text"
@@ -102,7 +270,6 @@ const AdminTeamOverview = () => {
         />
       </div>
 
-      {/* Conditionally render WeeklyStatusMatrix */}
       {showProgress ? (
         <div className="overlay">
           <button className="close-btn" onClick={closeProgress}>
@@ -111,14 +278,12 @@ const AdminTeamOverview = () => {
           <WeeklyStatusMatrix />
         </div>
       ) : (
-        /* Team Overview Section */
         <div className="form-container">
           <h1>Admin Team Overview</h1>
           <p className="description">
             View detailed information for all teams and their members below.
           </p>
 
-          {/* Teams List */}
           <div id="teams-list">
             {teams
               .filter(
