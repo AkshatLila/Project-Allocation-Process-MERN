@@ -21,7 +21,7 @@ function StudentPortal() {
 
       <Link to="/studentformsubmission" className="btn">Form Submissions</Link>
 
-      <Link to="/HTML/project_details_filling.html" className="btn">Fill Project Details</Link>
+      <Link to="/mentorchoiceform" className="btn">Fill Project Details</Link>
   </div>
 </>
   );

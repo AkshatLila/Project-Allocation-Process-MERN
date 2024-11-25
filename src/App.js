@@ -28,13 +28,17 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<StudentPortal/>} />
+          {/* STUDENT PORTAL */}
+          {/* <Route path="/" element={<StudentPortal/>} /> */}
           <Route path= "/teamjoin" element={<TeamJoin/>}/>
           <Route path= "/studentprojectstatus" element={<StudentprojectStatus/>}/>
           <Route path= "/studentformsubmission" element={<StudentFormSubmission/>}/>
           <Route path= "/projectabstractform" element={<ProjectAbstractForm/>}/>
           <Route path= "/rolespecificationform" element={<RoleSpecificationForm/>}/>
-          <Route path="/studentstatus" element={<StudentprojectStatus />} />
+          <Route path= "/mentorchoiceform" element={<MentorChoiceForm/>}/>
+
+          {/* MENTOR PORTAL */}
+          <Route path="/" element={<MentorPortal/>} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>
       </Router>
