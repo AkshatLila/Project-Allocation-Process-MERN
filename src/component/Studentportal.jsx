@@ -13,21 +13,15 @@ function StudentPortal() {
     <h2>Student Portal</h2>
   </div>
   <div className="button">
-    <button className="btn">
-      <Link to="/teamjoin">My Team</Link>
+      <Link to="/teamjoin" className="btn">My Team</Link>
       {/* This will route to team_view page once a student is in the team */}
       {/*  */}
-    </button>
-    <button className="btn">
-      <Link to="/studentprojectstatus">My Progress</Link>
-    </button>
+      <Link to="/studentprojectstatus" className="btn">My Progress</Link>
     {/* Only to be shown to leaders of the team */}
-    <button className="btn">
-      <Link to="/studentformsubmission">Form Submissions</Link>
-    </button>
-    <button className="btn">
-      <Link to="/HTML/project_details_filling.html">Fill Project Details</Link>
-    </button>
+
+      <Link to="/studentformsubmission" className="btn">Form Submissions</Link>
+
+      <Link to="/HTML/project_details_filling.html" className="btn">Fill Project Details</Link>
   </div>
 </>
   );
