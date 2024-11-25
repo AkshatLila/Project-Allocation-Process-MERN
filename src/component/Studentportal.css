@@ -11,6 +11,8 @@ body{
 }
 .student{
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 .header {
   display: flex;
@@ -32,7 +34,8 @@ body{
 
   .button{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
   }
 
