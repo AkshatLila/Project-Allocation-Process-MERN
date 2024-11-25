@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Form2.css";
 import logo from "./logo.jpg";
 
 const RoleSpecificationForm = () => {
@@ -58,6 +57,122 @@ const RoleSpecificationForm = () => {
 
   return (
     <>
+      <style>
+        {`
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f2f7;
+            color: #333;
+          }
+
+          .status {
+            text-align: center;
+            margin: 20px 0;
+          }
+
+          .logo {
+            width: 55px;
+          }
+
+          .form-container {
+            min-width: 900px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+
+          h1 {
+            text-align: center;
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+          }
+
+          h2 {
+            text-align: center;
+            font-size: 1.2em;
+            color: #007bff;
+            margin-bottom: 20px;
+          }
+
+          h3 {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: left;
+          }
+
+          label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #333;
+          }
+
+          input[type="text"],
+          input[type="date"],
+          textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+          }
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+          }
+
+          th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+          }
+
+          .photo-upload {
+            margin-top: 40px;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+          }
+
+          #photo-upload {
+            position: relative;
+            right: 0;
+            width: 23%;
+          }
+
+          .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #6ec3c7;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+          }
+
+          .submit-btn:hover {
+            background-color: #5aa9ad;
+          }
+        `}
+      </style>
+
       <div className="status">
         <img src={logo} alt="logo" />
       </div>
@@ -147,34 +262,23 @@ const RoleSpecificationForm = () => {
           </div>
         ))}
 
-        {/* Photo Upload Section */}
         <div className="photo-upload">
-  <label htmlFor="photo-upload">Upload Photo:</label>
-  <input
-    type="file"
-    id="photo-upload"
-    accept="image/*"
-    onChange={handlePhotoUpload}
-  />
-  <div id="photo-preview-container" style={{ width: '200px', height: '200px', overflow: 'hidden' }}>
-    {photoPreview && (
-      <img
-        id="photo-preview"
-        src={photoPreview}
-        alt="Photo Preview"
-        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-      />
-    )}
-  </div>
-</div>
-
-        {/* Mentor Signature Section */}
-        <div className="mentor-signature">
-          <hr />
-          <label>Mentor’s Name & Signature</label>
+          <label htmlFor="photo-upload">Upload Photo:</label>
+          <input
+            type="file"
+            id="photo-upload"
+            accept="image/*"
+            onChange={handlePhotoUpload}
+          />
+          {photoPreview && (
+            <img
+              src={photoPreview}
+              alt="Photo Preview"
+              style={{ width: '100px', height: '100px', objectFit: 'contain' }}
+            />
+          )}
         </div>
 
-        {/* Submit Button */}
         <div className="submit-section">
           <button className="submit-btn">Submit</button>
         </div>

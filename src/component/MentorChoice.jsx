@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import "./MentorChoice.css";
 import logo from './logo.jpg';
 
 const MentorChoiceForm = () => {
@@ -36,6 +35,108 @@ const MentorChoiceForm = () => {
 
   return (
     <div>
+      {/* Inline CSS */}
+      <style>{`
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f1f2f7;
+          color: #333;
+        }
+        .status {
+          text-align: center;
+          margin: 20px 0;
+        }
+        .logo {
+          width: 55px;
+          margin-top: 0px;
+        }
+        .form-container {
+          min-width: 1000px;
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 8px;
+          margin: 30px auto;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h3 {
+          text-align: center;
+          color: #333;
+          margin-bottom: 20px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        .form-group {
+          margin-bottom: 15px;
+        }
+        label {
+          font-weight: bold;
+          display: block;
+          margin-bottom: 5px;
+        }
+        input, textarea, select {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          margin-bottom: 10px;
+        }
+        .choice-list {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+        .mentor-choice {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .mentor-choice label {
+          margin-bottom: 5px;
+          font-size: 14px;
+        }
+        .submit-btn {
+          width: 100%;
+          padding: 12px;
+          background-color: #6ec3c7;
+          color: #ffffff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+          margin-top: 20px;
+        }
+        .submit-btn:hover {
+          background-color: #5aa9ad;
+        }
+        @media (max-width: 1024px) {
+          .form-container {
+            width: 80%;
+          }
+        }
+        @media (max-width: 768px) {
+          .form-container {
+            width: 90%;
+          }
+        }
+        @media (max-width: 480px) {
+          .form-container {
+            width: 95%;
+          }
+          .choice-list {
+            flex-direction: column;
+            align-items: stretch;
+          }
+        }
+      `}</style>
+
       {/* Logo Section */}
       <div className="status">
         <img src={logo} alt="SKIT Logo" className="logo" />

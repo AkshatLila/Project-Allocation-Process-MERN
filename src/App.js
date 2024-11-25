@@ -40,7 +40,6 @@ function App() {
           {/* <Route path="/" element={<MentorPortal/>} /> */}
           <Route path="/mentorteamselection" element={<MentorTeamSelection/>} />
           <Route path="/mentordashboard" element={<MentorDashboard/>} />
-
           {/* ADMIN PORTAL */}
           {/* <Route path="/" element={<AdminPortal/>} /> */}
           <Route path="/mentorstatusadmin" element={<MentorStatusAdmin/>} />
