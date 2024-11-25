@@ -14,12 +14,12 @@ function StudentPortal() {
   </div>
   <div className="button">
     <button className="btn">
-      <Link to="/HTML/team_join_form.html">My Team</Link>
+      <Link to="/teamjoin">My Team</Link>
       {/* This will route to team_view page once a student is in the team */}
       {/*  */}
     </button>
     <button className="btn">
-      <Link to="/HTML/student_project_status.html">My Progress</Link>
+      <Link to="/studentprojectstatus">My Progress</Link>
     </button>
     {/* Only to be shown to leaders of the team */}
     <button className="btn">
