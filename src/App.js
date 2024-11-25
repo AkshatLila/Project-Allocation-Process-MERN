@@ -5,7 +5,6 @@ import {
   Link,
   Form,
 } from "react-router-dom";
-import TeamStatus from "./component/TeamStatusAdmin";
 import Login from "./component/Login";
 import StudentPortal from "./component/Studentportal";
 import StudentprojectStatus from "./component/StudentprojectStatus";
@@ -44,9 +43,10 @@ function App() {
 
           {/* ADMIN PORTAL */}
           <Route path="/" element={<AdminPortal/>} />
-          <Route path="/mentorstatusadmin" element={<MentorStatusAdmin />} />
-          <Route path="/adminteamoverview" element={<AdminTeamOverview />} />
-          <Route path="/teamstatus" element={<TeamStatus />} />
+          <Route path="/mentorstatusadmin" element={<MentorStatusAdmin/>} />
+          <Route path="/adminteamoverview" element={<AdminTeamOverview/>} />
+          <Route path="/adminuploadsection" element={<AdminUploadSection/>} />
+          <Route path="/weeklystatusmatrix" element={<WeeklyStatusMatrix/>} />
         </Routes>
       </Router>
     </>

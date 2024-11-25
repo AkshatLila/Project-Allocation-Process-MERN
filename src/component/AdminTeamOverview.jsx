@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import WeeklyStatusMatrix from "./Form3"; // Import the WeeklyStatusMatrix component
 import "./AdminTeamOverview.css";
-import logo from './logo.jpg'
+import logo from './logo.jpg';
 
 const AdminTeamOverview = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [expandedTeams, setExpandedTeams] = useState({});
+  const [showProgress, setShowProgress] = useState(false); // State to toggle WeeklyStatusMatrix
+  const [currentTeam, setCurrentTeam] = useState(null); // To track the selected team
 
   const teams = [
     {
@@ -70,9 +73,15 @@ const AdminTeamOverview = () => {
     setSearchQuery(event.target.value.toLowerCase().trim());
   };
 
-  const viewProgress = (event, teamName) => {
+  const viewProgress = (event, team) => {
     event.stopPropagation(); // Prevent triggering toggleDetails.
-    window.location.href = "form3.html";
+    setCurrentTeam(team); // Set the selected team
+    setShowProgress(true); // Show the WeeklyStatusMatrix
+  };
+
+  const closeProgress = () => {
+    setShowProgress(false); // Hide the WeeklyStatusMatrix
+    setCurrentTeam(null); // Clear the selected team
   };
 
   return (
@@ -93,64 +102,74 @@ const AdminTeamOverview = () => {
         />
       </div>
 
-      {/* Team Overview Section */}
-      <div className="form-container">
-        <h1>Admin Team Overview</h1>
-        <p className="description">
-          View detailed information for all teams and their members below.
-        </p>
-
-        {/* Teams List */}
-        <div id="teams-list">
-          {teams
-            .filter(
-              (team) =>
-                team.projectName.toLowerCase().includes(searchQuery) ||
-                team.technology.toLowerCase().includes(searchQuery)
-            )
-            .map((team, index) => (
-              <div
-                className="team-row"
-                key={index}
-                onClick={() => toggleDetails(index)}
-              >
-                <div className="team-info">
-                  <h4>{team.projectName}</h4>
-                  <p>
-                    <strong>Technology:</strong> {team.technology}
-                  </p>
-                  <p>
-                    <strong>Mentor:</strong> {team.mentor}
-                  </p>
-                </div>
-                <div
-                  className="team-details"
-                  style={{
-                    maxHeight: expandedTeams[index] ? "500px" : "0",
-                    opacity: expandedTeams[index] ? "1" : "0",
-                  }}
-                >
-                  <h4>Team Members</h4>
-                  <ul>
-                    {team.members.map((member, idx) => (
-                      <li key={idx}>
-                        <strong>{member.name}</strong> - RTU Roll No:{" "}
-                        {member.rollNo} - Role: {member.role} - Group:{" "}
-                        {member.group}
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    className="progress-btn"
-                    onClick={(event) => viewProgress(event, team.projectName)}
-                  >
-                    View Progress
-                  </button>
-                </div>
-              </div>
-            ))}
+      {/* Conditionally render WeeklyStatusMatrix */}
+      {showProgress ? (
+        <div className="overlay">
+          <button className="close-btn" onClick={closeProgress}>
+            Close
+          </button>
+          <WeeklyStatusMatrix />
         </div>
-      </div>
+      ) : (
+        /* Team Overview Section */
+        <div className="form-container">
+          <h1>Admin Team Overview</h1>
+          <p className="description">
+            View detailed information for all teams and their members below.
+          </p>
+
+          {/* Teams List */}
+          <div id="teams-list">
+            {teams
+              .filter(
+                (team) =>
+                  team.projectName.toLowerCase().includes(searchQuery) ||
+                  team.technology.toLowerCase().includes(searchQuery)
+              )
+              .map((team, index) => (
+                <div
+                  className="team-row"
+                  key={index}
+                  onClick={() => toggleDetails(index)}
+                >
+                  <div className="team-info">
+                    <h4>{team.projectName}</h4>
+                    <p>
+                      <strong>Technology:</strong> {team.technology}
+                    </p>
+                    <p>
+                      <strong>Mentor:</strong> {team.mentor}
+                    </p>
+                  </div>
+                  <div
+                    className="team-details"
+                    style={{
+                      maxHeight: expandedTeams[index] ? "500px" : "0",
+                      opacity: expandedTeams[index] ? "1" : "0",
+                    }}
+                  >
+                    <h4>Team Members</h4>
+                    <ul>
+                      {team.members.map((member, idx) => (
+                        <li key={idx}>
+                          <strong>{member.name}</strong> - RTU Roll No:{" "}
+                          {member.rollNo} - Role: {member.role} - Group:{" "}
+                          {member.group}
+                        </li>
+                      ))}
+                    </ul>
+                    <button
+                      className="progress-btn"
+                      onClick={(event) => viewProgress(event, team)}
+                    >
+                      View Progress
+                    </button>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
