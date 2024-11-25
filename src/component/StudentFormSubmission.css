@@ -73,13 +73,10 @@
   }
   
   .upload-btn {
-    padding: 8px 16px;
     background-color: #6ec3c7;
     color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 35px;
+    text-decoration: none;
+    padding: 10px 40px;
   }
   
   .upload-btn:hover {

@@ -32,6 +32,7 @@ function App() {
           <Route path= "/teamjoin" element={<TeamJoin/>}/>
           <Route path= "/studentprojectstatus" element={<StudentprojectStatus/>}/>
           <Route path= "/studentformsubmission" element={<StudentFormSubmission/>}/>
+          <Route path= "/projectabstractform" element={<ProjectAbstractForm/>}/>
           <Route path="/studentstatus" element={<StudentprojectStatus />} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>

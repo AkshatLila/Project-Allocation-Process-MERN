@@ -1,6 +1,7 @@
 import React from "react";
 import "./StudentFormSubmission.css";
 import logo from "./logo.jpg"; 
+import { Link } from "react-router-dom";
 
 export default function StudentFormSubmission() {
   return (
@@ -23,10 +24,10 @@ export default function StudentFormSubmission() {
           <tbody>
             <tr>
               <td className="form-link">
-                <a href="#link-of-form1">Project Abstract Form [Form 1]</a>
+                <a>Project Abstract Form [Form 1]</a>
               </td>
               <td>
-                <button className="upload-btn">Fill</button>
+                <Link className="upload-btn">Fill</Link>
               </td>
             </tr>
             <tr>
@@ -34,7 +35,7 @@ export default function StudentFormSubmission() {
                 Role Specification of Team Members [Form 2]
               </td>
               <td>
-                <button className="upload-btn">Fill</button>
+              <Link className="upload-btn">Fill</Link>
               </td>
             </tr>
             {/* Add more rows dynamically or statically as needed */}
