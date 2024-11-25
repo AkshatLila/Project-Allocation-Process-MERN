@@ -1,3 +1,7 @@
+body {
+    background-color: #f1f2f7;
+}
+
 .admin-portal {
     display: flex;
     flex-direction: column;
@@ -5,10 +9,15 @@
     margin-bottom: 100px;
 }
 
+.admin {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .logo {
-    width: 70px;
+    width: 55px;
     height: auto;
-    margin-top: 120px;
 }
 
 .tag h2 {

@@ -28,7 +28,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<MentorPortal/>} />
+          <Route path="/" element={<AdminPortal/>} />
           <Route path="/studentstatus" element={<StudentprojectStatus />} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>

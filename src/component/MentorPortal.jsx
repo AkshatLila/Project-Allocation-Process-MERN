@@ -1,6 +1,7 @@
 import React from "react";
 import "./MentorPortal.css";
 import logo from "./logo.jpg"
+import { Link } from "react-router-dom";
 
 const MentorPortal = () => {
   return (
@@ -13,13 +14,13 @@ const MentorPortal = () => {
   </div>
   <div className="button">
     <button className="btn">
-      <a href="/HTML/mentor_team_selection.html">Team Selection</a>
+      <Link to="/HTML/mentor_team_selection.html">Team Selection</Link>
     </button>
     <button className="btn">
-      <a href="/HTML/mentor_dashboard.html">Dashboard</a>
+      <Link to="/HTML/mentor_dashboard.html">Dashboard</Link>
     </button>
     <button className="btn">
-      <a href="/HTML/approve_docs.html">Approve Docs</a>
+      <Link to="/HTML/approve_docs.html">Approve Docs</Link>
     </button>
   </div>
 </>
