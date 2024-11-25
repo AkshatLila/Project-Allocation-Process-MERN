@@ -33,6 +33,7 @@ function App() {
           <Route path= "/studentprojectstatus" element={<StudentprojectStatus/>}/>
           <Route path= "/studentformsubmission" element={<StudentFormSubmission/>}/>
           <Route path= "/projectabstractform" element={<ProjectAbstractForm/>}/>
+          <Route path= "/rolespecificationform" element={<RoleSpecificationForm/>}/>
           <Route path="/studentstatus" element={<StudentprojectStatus />} />
           <Route path="/teamstatus" element={<TeamStatus />} />
         </Routes>

@@ -27,7 +27,7 @@ export default function StudentFormSubmission() {
                 <a>Project Abstract Form [Form 1]</a>
               </td>
               <td>
-                <Link className="upload-btn">Fill</Link>
+                <Link to="/projectabstractform" className="upload-btn">Fill</Link>
               </td>
             </tr>
             <tr>
@@ -35,7 +35,7 @@ export default function StudentFormSubmission() {
                 Role Specification of Team Members [Form 2]
               </td>
               <td>
-              <Link className="upload-btn">Fill</Link>
+              <Link to="/rolespecificationform" className="upload-btn">Fill</Link>
               </td>
             </tr>
             {/* Add more rows dynamically or statically as needed */}
