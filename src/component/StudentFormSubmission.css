@@ -79,6 +79,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 35px;
   }
   
   .upload-btn:hover {
