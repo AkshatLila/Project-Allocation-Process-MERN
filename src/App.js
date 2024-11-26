@@ -28,7 +28,7 @@ function App() {
       <Router>
         <Routes>
           {/* STUDENT PORTAL */}
-          <Route path="/" element={<StudentPortal/>} />
+          {/* <Route path="/" element={<StudentPortal/>} /> */}
           <Route path= "/teamjoin" element={<TeamJoin/>}/>
           <Route path= "/studentprojectstatus" element={<StudentprojectStatus/>}/>
           <Route path= "/studentformsubmission" element={<StudentFormSubmission/>}/>
@@ -37,7 +37,7 @@ function App() {
           <Route path= "/mentorchoiceform" element={<MentorChoiceForm/>}/>
 
           {/* MENTOR PORTAL */}
-          {/* <Route path="/" element={<MentorPortal/>} /> */}
+          <Route path="/" element={<MentorPortal/>} />
           <Route path="/mentorteamselection" element={<MentorTeamSelection/>} />
           <Route path="/mentordashboard" element={<MentorDashboard/>} />
           {/* ADMIN PORTAL */}

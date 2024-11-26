@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./MentorTeamSelection.css"; 
 import logo from "./logo.jpg";
 
 const MentorTeamSelection = () => {
@@ -56,16 +55,127 @@ const MentorTeamSelection = () => {
 
   return (
     <div>
-      {/* Logo Section */}
+      <style>
+        {`
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f2f7;
+            color: #333;
+          }
+
+          .status {
+            text-align: center;
+            margin: 20px 0;
+          }
+
+          .logo {
+            width: 55px;
+          }
+
+          .form-container {
+            width: 60%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+
+          h1 {
+            text-align: center;
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+          }
+
+          .team-row {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+          }
+
+          .team-row:hover {
+            background-color: #f1f1f1;
+          }
+
+          .team-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .team-details {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+          }
+
+          .team-details.active {
+            max-height: 200px;
+            opacity: 1;
+          }
+
+          .team-details > p {
+            margin-top: 10px;
+          }
+
+          .approve-btn,
+          .reject-btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+          }
+
+          .approve-btn {
+            background-color: #6ec3c7;
+            color: #fff;
+          }
+
+          .reject-btn {
+            background-color: #e57373;
+            color: #fff;
+          }
+
+          .approve-btn:hover {
+            background-color: #5aa9ad;
+          }
+
+          .reject-btn:hover {
+            background-color: #d45a5a;
+          }
+
+          @media (max-width: 768px) {
+            .form-container {
+              width: 90%;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .form-container {
+              width: 95%;
+            }
+          }
+        `}
+      </style>
       <div className="status">
         <img src={logo} alt="SKIT Logo" className="logo" />
       </div>
-
-      {/* Team Selection Container */}
       <div className="form-container">
         <h1>Team Selection</h1>
-
-        {/* Team List */}
         <div id="team-list">
           {teams.map((team, index) => (
             <div
@@ -86,12 +196,9 @@ const MentorTeamSelection = () => {
                 </div>
               </div>
               <div
-                className={`team-details ${openTeamIndex === index ? "active" : ""}`}
-                style={{
-                  maxHeight: openTeamIndex === index ? "200px" : "0",
-                  overflow: "hidden",
-                  transition: "max-height 0.3s ease",
-                }}
+                className={`team-details ${
+                  openTeamIndex === index ? "active" : ""
+                }`}
               >
                 <p>
                   <strong>Team Members:</strong> {team.members}
