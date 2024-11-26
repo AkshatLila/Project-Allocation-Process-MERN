@@ -1,8 +1,10 @@
 {
   "liveServer.settings.port": 5501,
   "cSpell.words": [
+    "adminportal",
     "adminteamoverview",
     "adminuploadsection",
+    "Documentapproval",
     "mentorchoiceform",
     "mentordashboard",
     "mentorstatusadmin",

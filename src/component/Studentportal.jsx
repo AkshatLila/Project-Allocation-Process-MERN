@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from './logo.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "./logo.jpg";
 
 function StudentPortal() {
   return (
@@ -124,10 +124,18 @@ function StudentPortal() {
         <h2>Student Portal</h2>
       </div>
       <div className="button">
-        <Link to="/teamjoin" className="btn">My Team</Link>
-        <Link to="/studentprojectstatus" className="btn">My Progress</Link>
-        <Link to="/studentformsubmission" className="btn">Form Submissions</Link>
-        <Link to="/mentorchoiceform" className="btn">Fill Project Details</Link>
+        <Link to="/teamjoin" className="btn">
+          My Team
+        </Link>
+        <Link to="/studentprojectstatus" className="btn">
+          My Progress
+        </Link>
+        <Link to="/studentformsubmission" className="btn">
+          Form Submissions
+        </Link>
+        <Link to="/mentorchoiceform" className="btn">
+          Fill Project Details
+        </Link>
       </div>
     </>
   );

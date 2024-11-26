@@ -2,9 +2,9 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  Form,
+  Navigate,
 } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Login from "./component/Login";
 import StudentPortal from "./component/Studentportal";
 import StudentprojectStatus from "./component/StudentprojectStatus";
@@ -24,35 +24,177 @@ import MentorTeamSelection from "./component/MentorTeamSelection";
 import DocumentApproval from "./component/Documentapproval";
 
 function App() {
-  return (
-    <>
-      <Router>
-        <Routes>
-          {/* LOGIN */}
-          {/* <Route path="/" element={<Login/>} /> */}
-          {/* STUDENT PORTAL */}
-          {/* <Route path="/" element={<StudentPortal/>} /> */}
-          <Route path= "/teamjoin" element={<TeamJoin/>}/>
-          <Route path= "/studentprojectstatus" element={<StudentprojectStatus/>}/>
-          <Route path= "/studentformsubmission" element={<StudentFormSubmission/>}/>
-          <Route path= "/projectabstractform" element={<ProjectAbstractForm/>}/>
-          <Route path= "/rolespecificationform" element={<RoleSpecificationForm/>}/>
-          <Route path= "/mentorchoiceform" element={<MentorChoiceForm/>}/>
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-          {/* MENTOR PORTAL */}
-          {/* <Route path="/" element={<MentorPortal/>} /> */}
-          <Route path="/mentorteamselection" element={<MentorTeamSelection/>} />
-          <Route path="/mentordashboard" element={<MentorDashboard/>} />
-          <Route path="/documentapproval" element={<DocumentApproval/>} />
-          {/* ADMIN PORTAL */}
-          <Route path="/" element={<AdminPortal/>} />
-          <Route path="/mentorstatusadmin" element={<MentorStatusAdmin/>} />
-          <Route path="/adminteamoverview" element={<AdminTeamOverview/>} />
-          <Route path="/adminuploadsection" element={<AdminUploadSection/>} />
-          <Route path="/weeklystatusmatrix" element={<WeeklyStatusMatrix/>} />
-        </Routes>
-      </Router>
-    </>
+  // Check authentication status on app load
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true); // Set authenticated to true if a token exists
+    } else {
+      setIsAuthenticated(false); // Explicitly set it to false if no token exists
+    }
+  }, []);
+
+  // Login handler
+  const handleLogin = (token) => {
+    localStorage.setItem("token", token);
+    setIsAuthenticated(true);
+  };
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Clear token
+    setIsAuthenticated(false); // Set authenticated to false
+  };
+
+  // Protected Route Component
+  const ProtectedRoute = ({ children }) => {
+    return isAuthenticated ? children : <Navigate to="/login" />;
+  };
+
+  return (
+    <Router>
+      <Routes>
+        {/* Default route: Redirect to login */}
+        <Route path="/" element={<Navigate to="/login" />} />
+
+        {/* LOGIN */}
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+
+        {/* STUDENT PORTAL */}
+        <Route
+          path="/studentportal"
+          element={
+            <ProtectedRoute>
+              <StudentPortal />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/teamjoin"
+          element={
+            <ProtectedRoute>
+              <TeamJoin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/studentprojectstatus"
+          element={
+            <ProtectedRoute>
+              <StudentprojectStatus />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/studentformsubmission"
+          element={
+            <ProtectedRoute>
+              <StudentFormSubmission />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/projectabstractform"
+          element={
+            <ProtectedRoute>
+              <ProjectAbstractForm />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/rolespecificationform"
+          element={
+            <ProtectedRoute>
+              <RoleSpecificationForm />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mentorchoiceform"
+          element={
+            <ProtectedRoute>
+              <MentorChoiceForm />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* MENTOR PORTAL */}
+        <Route
+          path="/mentorportal"
+          element={
+            <ProtectedRoute>
+              <MentorPortal />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mentorteamselection"
+          element={
+            <ProtectedRoute>
+              <MentorTeamSelection />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mentordashboard"
+          element={
+            <ProtectedRoute>
+              <MentorDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/documentapproval"
+          element={
+            <ProtectedRoute>
+              <DocumentApproval />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* ADMIN PORTAL */}
+        <Route
+          path="/adminportal"
+          element={
+            <ProtectedRoute>
+              <AdminPortal />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mentorstatusadmin"
+          element={
+            <ProtectedRoute>
+              <MentorStatusAdmin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/adminteamoverview"
+          element={
+            <ProtectedRoute>
+              <AdminTeamOverview />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/adminuploadsection"
+          element={
+            <ProtectedRoute>
+              <AdminUploadSection />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/weeklystatusmatrix"
+          element={
+            <ProtectedRoute>
+              <WeeklyStatusMatrix />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
