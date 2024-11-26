@@ -74,6 +74,7 @@ const TeamJoin = () => {
           .create-team > h3,
           .join-team > h3 {
             margin: 20px 0;
+            color: #000;
           }
 
           .create-team > input,
