@@ -123,7 +123,7 @@ const MentorPortal = () => {
           <Link to="/mentordashboard">Dashboard</Link>
         </button>
         <button className="btn">
-          <Link to="/HTML/approve_docs.html">Approve Docs</Link>
+          <Link to="/documentapproval">Approve Docs</Link>
         </button>
       </div>
     </>

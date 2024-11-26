@@ -21,12 +21,15 @@ import AdminUploadSection from "./component/AdminUpload";
 import StudentFormSubmission from "./component/StudentFormSubmission";
 import AdminTeamOverview from "./component/AdminTeamOverview";
 import MentorTeamSelection from "./component/MentorTeamSelection";
+import DocumentApproval from "./component/Documentapproval";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
+          {/* LOGIN */}
+          {/* <Route path="/" element={<Login/>} /> */}
           {/* STUDENT PORTAL */}
           {/* <Route path="/" element={<StudentPortal/>} /> */}
           <Route path= "/teamjoin" element={<TeamJoin/>}/>
@@ -37,11 +40,12 @@ function App() {
           <Route path= "/mentorchoiceform" element={<MentorChoiceForm/>}/>
 
           {/* MENTOR PORTAL */}
-          <Route path="/" element={<MentorPortal/>} />
+          {/* <Route path="/" element={<MentorPortal/>} /> */}
           <Route path="/mentorteamselection" element={<MentorTeamSelection/>} />
           <Route path="/mentordashboard" element={<MentorDashboard/>} />
+          <Route path="/documentapproval" element={<DocumentApproval/>} />
           {/* ADMIN PORTAL */}
-          {/* <Route path="/" element={<AdminPortal/>} /> */}
+          <Route path="/" element={<AdminPortal/>} />
           <Route path="/mentorstatusadmin" element={<MentorStatusAdmin/>} />
           <Route path="/adminteamoverview" element={<AdminTeamOverview/>} />
           <Route path="/adminuploadsection" element={<AdminUploadSection/>} />

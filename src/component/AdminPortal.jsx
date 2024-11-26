@@ -30,6 +30,7 @@ export default function AdminPortal() {
             font-family: Arial, Helvetica, sans-serif;
             font-weight: 300;
             margin-top: 40px;
+            margin-left: 42rem;
             color: #000;
           }
           .button-group {
@@ -106,7 +107,7 @@ export default function AdminPortal() {
         <Link className="btn" to="/adminteamoverview">
           Team Status
         </Link>
-        <Link className="btn" to="../HTML/approve_docs.html">
+        <Link className="btn" to="/documentapproval">
           Approve Docs
         </Link>
         <Link className="btn" to="/adminuploadsection">
