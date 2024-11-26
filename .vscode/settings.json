@@ -1,4 +1,20 @@
 {
   "liveServer.settings.port": 5501,
-  "cSpell.words": ["Studentportal", "studentstatus", "teamstatus"]
+  "cSpell.words": [
+    "adminteamoverview",
+    "adminuploadsection",
+    "mentorchoiceform",
+    "mentordashboard",
+    "mentorstatusadmin",
+    "mentorteamselection",
+    "projectabstractform",
+    "rolespecificationform",
+    "studentformsubmission",
+    "Studentportal",
+    "studentprojectstatus",
+    "studentstatus",
+    "teamjoin",
+    "teamstatus",
+    "weeklystatusmatrix"
+  ]
 }
