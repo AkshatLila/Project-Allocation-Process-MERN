@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import logo from './logo.jpg';
+import logo from "./logo.jpg";
 
 const TeamJoin = () => {
   const [teamCode, setTeamCode] = useState(""); // State to hold the generated team code
   const [enteredCode, setEnteredCode] = useState(""); // State for user-entered team code
+  const [isCodeGenerated, setIsCodeGenerated] = useState(false); // State to track if the code is generated
+  const [showPopup, setShowPopup] = useState(false); // State to show/hide the "Copied to clipboard" pop-up
 
   // Function to generate a random team code
   const generateTeamCode = () => {
-    const newCode = Math.random().toString(36).substring(2, 8).toUpperCase();
-    setTeamCode(newCode);
-    alert(`Team Code Generated: ${newCode}`);
+    if (!teamCode) {
+      const newCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+      setTeamCode(newCode);
+      setIsCodeGenerated(true);
+    }
   };
 
   // Function to handle team code usage
@@ -18,6 +22,16 @@ const TeamJoin = () => {
       alert("Please enter a valid team code.");
     } else {
       alert(`Team Code "${enteredCode}" used successfully.`);
+    }
+  };
+
+  // Function to copy the team code to clipboard
+  const copyToClipboard = () => {
+    if (teamCode) {
+      navigator.clipboard.writeText(teamCode).then(() => {
+        setShowPopup(true); // Show the pop-up
+        setTimeout(() => setShowPopup(false), 2000); // Hide the pop-up after 2 seconds
+      });
     }
   };
 
@@ -86,6 +100,47 @@ const TeamJoin = () => {
             margin-bottom: 10px;
           }
 
+          .create-team > .clipboard-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            margin: 10px 0;
+          }
+
+          .clipboard-container > button {
+            margin-left: 10px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+
+          .clipboard-container > button:hover {
+            background-color: #2980b9;
+          }
+
+          .clipboard-container > .popup {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2ecc71;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+
+          .clipboard-container > .popup.show {
+            opacity: 1;
+          }
+
           .create-team > button,
           .join-team > button {
             width: 100%;
@@ -104,6 +159,16 @@ const TeamJoin = () => {
 
           .create-team > button:hover {
             background-color: #5aa9ad;
+          }
+
+          .create-team > button.generated {
+            background-color: #6ec3c7;
+            color: #ffffff;
+            cursor: default;
+          }
+
+          .create-team > button.generated:hover {
+            background-color: #6ec3c7;
           }
 
           .join-team > button {
@@ -146,18 +211,32 @@ const TeamJoin = () => {
       <div className="container">
         <h1>Team Selection</h1>
         <div className="team-options">
-
           {/* Create Team Section */}
           <div className="create-team">
             <h3>Create Team</h3>
-            <input
-              type="text"
-              placeholder="Team Code"
-              value={teamCode}
-              disabled
-            />
-            <br />
-            <button type="button" onClick={generateTeamCode}>
+            <div className="clipboard-container">
+              <input
+                type="text"
+                placeholder="Team Code"
+                value={teamCode}
+                disabled
+              />
+              {teamCode && (
+                <>
+                  <div className={`popup ${showPopup ? "show" : ""}`}>
+                    Copied to clipboard!
+                  </div>
+                  <button type="button" onClick={copyToClipboard}>
+                    Copy
+                  </button>
+                </>
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={generateTeamCode}
+              className={isCodeGenerated ? "generated" : ""}
+            >
               Generate Team Code
             </button>
           </div>
@@ -177,7 +256,6 @@ const TeamJoin = () => {
               Use Team Code
             </button>
           </div>
-
         </div>
       </div>
     </div>
