@@ -17,6 +17,8 @@ function StudentPortal() {
             background-color: #f1f2f7;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
           }
 
           .student {
@@ -40,15 +42,19 @@ function StudentPortal() {
             font-size: 30px;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: 300;
-            margin-top: 20px;
+            margin-top: 30px;
             color: #000;
+            text-align: center;
+
           }
 
           .button {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 50px;
+            align-items: center;
           }
 
           .btn {
