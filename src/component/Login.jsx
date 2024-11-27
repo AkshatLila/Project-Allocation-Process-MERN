@@ -93,7 +93,7 @@ export default function Login({ onLogin }) {
           input[type="text"], input[type="password"] {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            margin: 12px 0;
             border: 1px solid #d9d9d9;
             border-radius: 5px;
             background-color: #f7faff;
@@ -124,8 +124,18 @@ export default function Login({ onLogin }) {
             justify-content: space-between;
             font-size: 0.9em;
             color: #888;
+            margin-top: 20px;
             margin-bottom: 15px;
           }
+            .rememberMe {
+              display: flex;
+            }
+
+            input[type="checkbox"] {
+              width: 15px;
+              height: 15px;
+              cursor: pointer;
+            
           .signin-button {
             background-color: #2abf9e;
             color: #ffffff;
@@ -175,7 +185,7 @@ export default function Login({ onLogin }) {
               required
             />
             <div className="options">
-              <label>
+              <label className="rememberMe">
                 <input
                   type="checkbox"
                   checked={rememberMe}
